@@ -1,0 +1,14 @@
+[
+  {
+    "title": "saiyara",
+    "artist": "Faheem Abdullah",
+    "albumArt": "/images/images.png",
+    "src": "/audio/song1.mp3"
+  },
+  {
+    "title": "Tension",
+    "artist": "Diljit Dosanjh ",
+    "albumArt": "/images/images2.png",
+    "src": "/audio/song2.mp3"
+  }
+]

@@ -1,0 +1,87 @@
+/* ===== Global Resets ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  background-color: var(--surface);
+  color: var(--surface-foreground);
+  font-family: "Inter", "Helvetica Neue", sans-serif;
+}
+
+/* ===== Layout Helpers ===== */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* ===== Glassmorphism Panels ===== */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.6);
+}
+
+/* ===== Smooth Hover Effects ===== */
+.hover-glow {
+  transition: all 0.3s ease;
+}
+.hover-glow:hover {
+  box-shadow: 0 0 12px rgba(0, 255, 204, 0.6);
+  transform: translateY(-2px);
+}
+
+/* ===== Text Utilities ===== */
+.text-gradient {
+  background: linear-gradient(90deg, #00e6b8, #00aaff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtle-text {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+}
+
+/* ===== Button Styles ===== */
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+.btn-primary {
+  background: linear-gradient(90deg, #00e6b8, #00aaff);
+  color: white;
+}
+.btn-primary:hover {
+  opacity: 0.9;
+}
+.btn-danger {
+  background: linear-gradient(90deg, #ef4444, #f87171);
+  color: white;
+}
+
+/* ===== Animations ===== */
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.9; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.pulse {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-in-up {
+  animation: fadeInUp 0.5s ease forwards;
+}

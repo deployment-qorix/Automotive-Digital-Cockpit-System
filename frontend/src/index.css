@@ -1,0 +1,233 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== THEME TOKENS ===== */
+:root {
+  --surface: #4066b3; /* deep navy background */
+  --surface-foreground: #f0f2f5;
+  --panel: #2d5daa;
+  --media: #2747a1;
+}
+:root.light {
+  --surface: #f5f7fb;
+  --surface-foreground: #2d59a0;
+}
+
+/* ===== GLOBAL BACKGROUNDS & TEXT ===== */
+.bg-surface { background-color: var(--surface); }
+.text-surface-foreground { color: var(--surface-foreground); }
+.bg-panel {
+  background-color: var(--panel);
+  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.6);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.bg-media {
+  background-color: var(--media);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ===== UI ELEMENTS ===== */
+
+/* Car icon animation */
+.car-div-icon img {
+  display: block;
+  transform-origin: 50% 50%;
+  will-change: transform;
+  pointer-events: none;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.car-div-icon img:hover {
+  transform: scale(1.05) rotate(3deg);
+  filter: drop-shadow(0 4px 8px rgba(0, 255, 204, 0.6));
+}
+
+/* Media player left section (art + text) */
+.media-left { 
+  display: flex; 
+  align-items: center; 
+  gap: 14px; 
+}
+.media-left img {
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.media-left img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.6);
+}
+
+/* Media player controls */
+.media-controls { 
+  display: flex; 
+  align-items: center; 
+  gap: 16px; 
+}
+.media-controls button {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.media-controls button:hover {
+  background: rgba(0, 255, 204, 0.15);
+  transform: scale(1.1);
+  box-shadow: 0 0 8px rgba(0, 255, 204, 0.4);
+}
+
+/* Map container styling */
+#map { 
+  border-radius: 14px; 
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.45);
+  transition: box-shadow 0.3s ease;
+}
+#map:hover {
+  box-shadow: 0 6px 18px rgba(0, 255, 204, 0.3);
+}
+
+/* ===== BUTTONS ===== */
+button {
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 8px rgba(0, 255, 204, 0.3);
+}
+.btn-primary {
+  background: linear-gradient(90deg, #00e6b8, #00aaff);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+}
+.btn-danger {
+  background: linear-gradient(90deg, #ef4444, #f87171);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+.animate-fadeIn { animation: fadeIn 0.3s ease forwards; }
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.9; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.pulse { animation: pulse 1.5s infinite; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1100px) {
+  .grid-cols-12 { grid-template-columns: repeat(1, minmax(0,1fr)); }
+}
+.tesla-dashboard {
+  background: linear-gradient(180deg, #0b0e13 0%, #11141a 100%);
+  color: rgb(245, 244, 248);
+  font-family: "Helvetica Neue", sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Glass effect panels */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 18px;
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 20px;
+  margin: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.glass-panel:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.09);
+}
+
+/* Top bar info */
+.top-bar {
+  font-size: 0.95em;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  width: 100%; /* match map width */
+  margin: 0 auto; /* center it horizontally */
+  display: flex;
+  justify-content: space-around;
+  padding: 6px 10px;
+}
+
+/* Info items */
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+.info-item:hover {
+  opacity: 1;
+}
+
+/* Find this rule in your index.css file and change it */
+
+/* Change this: */
+.map-container {  
+  height: 300px; 
+  border-radius: 15px;  
+  overflow: hidden;  
+  margin: 0 10px;
+}
+
+/* To this: */
+#map {  
+  height: 400px; /* You can adjust this height */
+  width: 100%;
+  border-radius: 15px;  
+  overflow: hidden;  
+  margin: 0 auto;
+}
+/* Bottom bar controls */
+.bottom-bar {
+  font-size: 0.95em;
+  display: flex;
+  justify-content: space-around;
+  width: 100%; /* match map width */
+  margin: 0 auto; /* center */
+  padding: 6px 10px;
+}
+
+/* Control items */
+.control-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+.control-item:hover {
+  transform: scale(1.05);
+  color: #00ffd0;
+}

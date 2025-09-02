@@ -1,0 +1,4 @@
+[
+  { "id": 1, "name": "Ravi Patel", "number": "+91 91234 56789", "type": "recent", "time": 1691769600000 },
+  { "id": 2, "name": "Priya Singh", "number": "+91 99876 54321", "type": "missed", "time": 1691856000000 }
+]

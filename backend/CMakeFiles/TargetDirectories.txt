@@ -1,0 +1,3 @@
+/home/l-100963/projects/AutomotiveCockpit/backend/automotive_digital_cockpit/CMakeFiles/cockpit.dir
+/home/l-100963/projects/AutomotiveCockpit/backend/automotive_digital_cockpit/CMakeFiles/edit_cache.dir
+/home/l-100963/projects/AutomotiveCockpit/backend/automotive_digital_cockpit/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/cockpit.dir/main.cpp.o CMakeFiles/cockpit.dir/src/api.cpp.o CMakeFiles/cockpit.dir/src/telemetry_handler.cpp.o CMakeFiles/cockpit.dir/model/interface.cpp.o -o cockpit 
